@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bg color</title>
+  </head>
+  <style>
+    body {
+      background-color: #f5deb3;
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    h1 {
+      color: #fff;
+      font-weight: 200;
+    }
+
+    button {
+      padding: 15px;
+      background: transparent;
+      border: 2px solid white;
+      transition: 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    button:hover {
+      background-color: #000;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    button:active {
+      padding: 5px;
+    }
+
+    .color-plate{
+        width: 50px;
+        height: 50px;
+        padding: 3px;
+        border-radius: 1rem;
+        margin-bottom: 50px;
+        background-color: #fff;
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+  </style>
+  <body>
+    <input class="color-plate" type="color" name="color" id="color-plate">
+    <button id="btn">Change color</button>
+    <h1 id="hexColor">#AAAAA</h1>
+  </body>
+
+  <script>
+    const btn = document.getElementById("btn");
+    const hex = document.getElementById("hexColor");
+
+    const color = document.getElementById("color-plate")
+
+    function randomColor() {
+      let letters = "0123456789ABCDEF";
+      let color = "#";
+      for (i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    btn.addEventListener("click", () => {
+      document.body.style.backgroundColor = randomColor();
+      hex.innerHTML = randomColor();
+    });
+
+    color.addEventListener("input",()=>{
+        const selectedColor = color.value;
+        document.body.style.backgroundColor = selectedColor;
+    })
+
+  </script>
+</html>
