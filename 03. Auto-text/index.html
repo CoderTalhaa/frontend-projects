@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AUTO TEXT</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: #131010;
+            color: pink;
+        }
+
+        P{
+            font-size: 3rem;
+        }
+        .js{
+            color: chocolate;
+        }
+        .typed-text{
+            color: rgb(119, 0, 255);
+        }
+        .cursor{
+            background-color: brown;
+        }
+    </style>
+  </head>
+  <body>
+    <p>
+      <span class="js">I am </span> a <span class="typed-text"></span>
+      <span class="cursor">&nbsp;</span>
+    </p>
+
+    <script>
+        const typedTextSpan = document.querySelector('.typed-text')
+        const cursor = document.querySelector('.cursor')
+
+        const words = ['Developer','Freelancer','student','UI/UX','Threejs'];
+
+        const typingDelay = 200;
+        const erasingDelay = 200;
+        const newLetterDelay = 2000;
+        let index = 0;
+        let charIndex = 0;
+
+        document.addEventListener('DOMContentLoaded',()=>{
+            if(words.length){
+                setTimeout(type,newLetterDelay)
+            }
+        })
+
+        function type(){
+            if(charIndex < words[index].length){
+                typedTextSpan.textContent += words[index].charAt(charIndex);
+                charIndex++;
+                setTimeout(type,typingDelay)
+            }else{
+                setTimeout(erase, newLetterDelay)
+            }
+        }
+
+        function erase(){
+            if(charIndex >0){
+                typedTextSpan.textContent = words[index].substring(0,charIndex-1)
+                charIndex--
+                setTimeout(erase,erasingDelay)
+            }else{
+                index++
+                if(index>= words.length){
+                    index = 0
+                }
+                setTimeout(type,typingDelay + 1100)
+            }
+        }
+
+    </script>
+  </body>
+</html>
