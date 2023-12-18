@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: bisque;
+    
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    font-size: 3rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.game{
+    height: 60vmin;
+    width: 60vmax;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+
+}
+
+.box{
+    height: 18vmin;
+    width: 18vmax;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 1rem #212121;
+    font-size: 8vmin;
+    color: burlywood;
+    background-color: blanchedalmond;
+}
+
+#reset-btn{
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 1rem;
+    font-size: 2rem;
+    background-color: #212121;
+    cursor: pointer;
+    color: aliceblue;
+    border-radius: 1rem;
+    border: none;
+}
+
+.msg-container{
+    width: 700px;
+    height: 600px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* background-color: #212121; */
+    border-radius: 1rem;
+
+}
+
+.msg-container p{
+    margin: 9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2rem;
+}
+
+.hide{
+    display: none;
+}
