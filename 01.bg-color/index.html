@@ -81,5 +81,37 @@
         document.body.style.backgroundColor = selectedColor;
     })
 
-  </script>
+  </script>  
 </html>
+
+<!-- <h1 id="header">My name is Talha</h1>
+<button id="start">start</button> 
+<button id="stop">stop</button>
+<script>
+
+
+    const random = ()=>{
+        let hex = '0123456789ABCDEF'  
+        let color = '#'
+        for(let i= 0; i<6; i++){
+            color += hex[Math.floor(Math.random()*16)]
+            }
+            return color
+    }
+
+    let stopp;
+    const play = document.getElementById('start').addEventListener('click',()=>{
+        stopp = setInterval(()=>{
+            document.body.style.background = random()
+           console.log(random()) 
+            console.log('start')
+        },1000)
+    })
+
+    const stop = document.getElementById('stop').addEventListener('click',()=>{
+        console.log('stop')
+        clearInterval(stopp) 
+
+    })
+
+</script> -->
